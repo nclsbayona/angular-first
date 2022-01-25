@@ -1,3 +1,17 @@
 <hello name="{{ name }}"></hello>
 <p [class]="class">{{ hello() }}</p>
 <app-new> </app-new>
+<input [(ngModel)]="cls" type="text" value="Hola" />
+<span>{{ show() }}</span>
+<h2 *ngIf="display(); else elseBlock">Hola</h2>
+<ng-template #elseBlock>
+  <h2>No Hola</h2>
+</ng-template>
+<button (click)="this.disp = !this.disp">Display</button>
+<span *ngIf="display(); then noBlock; else ifBlock"></span>
+<ng-template #ifBlock>
+  <h2>Hola2</h2>
+</ng-template>
+<ng-template #noBlock>
+  <h2>No Hola2</h2>
+</ng-template>
