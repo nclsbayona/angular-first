@@ -6,6 +6,8 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  public num = 0;
+  public array = ['Juan', 'Lucas', 'Casas', 'Hector', 'Jota'];
   public name = 'Angular ' + VERSION.full;
   public class = 'hey';
   public cls = 'Hey';
@@ -18,5 +20,9 @@ export class AppComponent {
   }
   public show() {
     console.log(this.cls);
+  }
+  public addToNum() {
+    this.num += 1;
+    this.num %= this.array.length;
   }
 }

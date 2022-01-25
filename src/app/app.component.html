@@ -2,6 +2,7 @@
 <p [class]="class">{{ hello() }}</p>
 <app-new> </app-new>
 <input [(ngModel)]="cls" type="text" value="Hola" />
+<h4>{{ cls }}</h4>
 <span>{{ show() }}</span>
 <h2 *ngIf="display(); else elseBlock">Hola</h2>
 <ng-template #elseBlock>
@@ -15,3 +16,19 @@
 <ng-template #noBlock>
   <h2>No Hola2</h2>
 </ng-template>
+<h1>Switch</h1>
+<h2 [ngSwitch]="array[num]">
+  <h6 *ngSwitchCase="'Juan'">Mi nombre es Juan, es un placer conocerte</h6>
+  <h6 *ngSwitchCase="'Lucas'">Mi nombre no es Juan, yo soy Lucas</h6>
+  <h6 *ngSwitchCase="'Casas'">
+    Mi nombre no puede ser Casas, ese es un apellido
+  </h6>
+  <h6 *ngSwitchCase="'Hector'">Mi nombre es Hector, es un placer conocerte</h6>
+  <h6 *ngSwitchDefault>Next please!</h6>
+</h2>
+<button (click)="addToNum()">Hey hello</button>
+<h1>For</h1>
+<ng-template #doneBlock><p>Primero</p></ng-template>
+<div *ngFor="let name of array; index as i; first as f">
+  <h2>{{ i + ' ' + name }}</h2>
+</div>
